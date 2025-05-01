@@ -44,32 +44,79 @@ Results are exported to Excel/CSV with the following structure:
   - pandas (for Excel handling)
   - Additional dependencies listed in `requirements.txt`
 
-## Installation
-1. Clone this repository
+## Local Setup
+
+### Prerequisites
+- Python 3.9 or higher
+- Git
+
+### Installation
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/harolCalzada/scraper-tech-challenge.git
+   cd scraper-tech-challenge
+   ```
+
 2. Create a virtual environment:
    ```bash
-   python -m venv venv
+   python3 -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
+
 3. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-## Usage
-1. Place your input Excel file in the project directory
-2. Run the script:
+### Running the Project
+1. Start Jupyter Notebook:
    ```bash
-   python scraper.py
+   jupyter notebook
    ```
-3. Find the results in the output Excel/CSV file
+
+2. In your browser, navigate to the `notebooks` directory
+
+3. Open `product_scraper_demo.ipynb`
+
+4. You can now run the cells in the notebook
+
+### Stopping the Project
+1. To stop Jupyter Notebook: Press `Ctrl+C` in the terminal
+2. To deactivate the virtual environment:
+   ```bash
+   deactivate
+   ```
+
+## Usage
+
+### Using the Jupyter Notebook
+1. Place your input Excel file in the `input` directory as `products.xlsx`
+2. Open and run the Jupyter notebook `notebooks/product_scraper_demo.ipynb`
+3. The results will be saved in the `output` directory as `results.xlsx`
+
+The notebook provides an interactive environment where you can:
+- View the processing steps
+- Inspect intermediate results
+- Modify parameters if needed
+- See detailed error messages if they occur
 
 ## Project Structure
 ```
-├── scraper.py           # Main script
-├── requirements.txt     # Project dependencies
+├── notebooks/          # Jupyter notebooks
+│   └── product_scraper_demo.ipynb
+├── src/                # Source code
+│   ├── domain/         # Domain layer
+│   │   ├── entities/   # Domain entities
+│   │   └── ports/      # Interface definitions
+│   ├── application/    # Application layer
+│   │   ├── services/   # Domain services
+│   │   └── use_cases/  # Application use cases
+│   └── infrastructure/ # Infrastructure layer
+│       ├── adapters/   # Concrete implementations
+│       └── config/     # Configuration
 ├── input/              # Input Excel files
-└── output/             # Generated results
+├── output/             # Generated results
+└── requirements.txt    # Project dependencies
 ```
 
 ## Notes

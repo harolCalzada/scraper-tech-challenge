@@ -22,16 +22,13 @@ class ScrapedProduct:
     marketplace: str  # 'walmart' or 'mercadolibre'
     
     # Scraped product information
-    identifier: str
-    title: str
-    current_price: float
-    list_price: Optional[float]
+    name: str
     url: str
-    seller: Optional[str]  # Specific seller within the marketplace if applicable
-    image_url: str
+    price: float
     similarity_score: float = 0.0  # Score to determine how well it matches the search criteria
+    min_similarity_score: float = 0.6  # Minimum score to consider a match
     
     @property
     def found_match(self) -> bool:
         """Indicates if this product is considered a valid match based on similarity score."""
-        return self.similarity_score >= app_settings.min_similarity_score
+        return self.similarity_score >= self.min_similarity_score
