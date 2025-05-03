@@ -1,14 +1,17 @@
 # E-commerce Product Scraper
 
 ## Project Overview
+
 This Python-based web scraper is designed to search and extract product information from major e-commerce platforms (walmart.com.mx or mercadolibre.com.mx) based on an input Excel file containing product details.
 
 ## Objectives
+
 - Develop a Python script that searches products on e-commerce platforms using Excel file input
 - Match and extract relevant product information
 - Export results in a structured format
 
 ## Features
+
 - Excel file input processing
 - Automated product search on e-commerce platforms
 - Intelligent product matching
@@ -22,14 +25,18 @@ This Python-based web scraper is designed to search and extract product informat
   - Product image URL
 
 ## Input Format
+
 The script expects an Excel file with the following columns:
+
 - SKU
 - Product Name
 - Brand/Supplier
 - Category
 
 ## Output Format
+
 Results are exported to Excel/CSV with the following structure:
+
 - Product
 - Found Title
 - Price
@@ -38,26 +45,55 @@ Results are exported to Excel/CSV with the following structure:
 - Image
 
 ## Technical Requirements
-- Python 3.x
-- Required libraries:
-  - requests/BeautifulSoup/Selenium (for web scraping)
-  - pandas (for Excel handling)
-  - Additional dependencies listed in `requirements.txt`
 
-## Local Setup
-
-### Prerequisites
 - Python 3.9 or higher
 - Git
 
+## Installation
+
+### Core Installation (For Production Use)
+
+```bash
+# Clone the repository
+git clone https://github.com/harolCalzada/scraper-tech-challenge.git
+cd scraper-tech-challenge
+
+# Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows use: .\venv\Scripts\activate
+
+# Install core dependencies
+pip install -r requirements.txt
+```
+
+### Development Installation
+
+If you want to contribute to the project or run the Jupyter notebooks locally:
+
+```bash
+# After following the core installation steps above
+pip install -r requirements-dev.txt
+```
+
+### Google Colab Usage
+
+To use the scraper in Google Colab:
+
+1. Open the notebook in `notebooks/colab_scraper_demo.ipynb`
+2. The notebook will automatically install the required dependencies
+3. Follow the instructions in the notebook
+
 ### Installation
+
 1. Clone this repository:
+
    ```bash
    git clone https://github.com/harolCalzada/scraper-tech-challenge.git
    cd scraper-tech-challenge
    ```
 
 2. Create a virtual environment:
+
    ```bash
    python3 -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
@@ -69,7 +105,9 @@ Results are exported to Excel/CSV with the following structure:
    ```
 
 ### Running the Project
+
 1. Start Jupyter Notebook:
+
    ```bash
    jupyter notebook
    ```
@@ -81,6 +119,7 @@ Results are exported to Excel/CSV with the following structure:
 4. You can now run the cells in the notebook
 
 ### Stopping the Project
+
 1. To stop Jupyter Notebook: Press `Ctrl+C` in the terminal
 2. To deactivate the virtual environment:
    ```bash
@@ -90,17 +129,20 @@ Results are exported to Excel/CSV with the following structure:
 ## Usage
 
 ### Using the Jupyter Notebook
+
 1. Place your input Excel file in the `input` directory as `products.xlsx`
 2. Open and run the Jupyter notebook `notebooks/product_scraper_demo.ipynb`
 3. The results will be saved in the `output` directory as `results.xlsx`
 
 The notebook provides an interactive environment where you can:
+
 - View the processing steps
 - Inspect intermediate results
 - Modify parameters if needed
 - See detailed error messages if they occur
 
 ## Project Structure
+
 ```
 ├── notebooks/          # Jupyter notebooks
 │   └── product_scraper_demo.ipynb
@@ -120,6 +162,7 @@ The notebook provides an interactive environment where you can:
 ```
 
 ## Notes
+
 - The script is well-documented and includes comments for better understanding
 - Designed to run locally with clear execution instructions
 - Implements error handling and retry mechanisms
