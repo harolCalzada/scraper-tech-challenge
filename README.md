@@ -79,7 +79,7 @@ pip install -r requirements-dev.txt
 
 To use the scraper in Google Colab:
 
-1. Open the notebook in `notebooks/colab_scraper_demo.ipynb`
+1. Open the notebook in `notebooks/product_scraper_colab_demo.ipynb`
 2. The notebook will automatically install the required dependencies
 3. Follow the instructions in the notebook
 
@@ -140,6 +140,10 @@ The notebook provides an interactive environment where you can:
 - Inspect intermediate results
 - Modify parameters if needed
 - See detailed error messages if they occur
+
+## Production Demo
+
+Colab demo: [link](https://colab.research.google.com/drive/1GhiF7jlEHnTO5s1qO7k3dje4NUDDOcDW?usp=sharing)
 
 ## Project Structure
 
