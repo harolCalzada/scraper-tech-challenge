@@ -20,15 +20,15 @@ class AppSettings:
         if self.supported_sites is None:
             self.supported_sites = {
                 'walmart': 'https://www.walmart.com.mx',
-                'mercadolibre': 'https://www.mercadolibre.com.mx'
+                'mercadolibre': 'https://listado.mercadolibre.com.mx'
             }
 
 # Default scraper settings
 default_scraper_settings = ScraperSettings(
     user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-    request_delay=1.0,  # Delay between requests in seconds
-    max_retries=3,
-    timeout=10
+    request_delay=3.0,  # Base delay between requests in seconds (will increase with exponential backoff)
+    max_retries=8,      # Maximum number of retries per request
+    timeout=45          # Increased timeout for slower connections
 )
 
 # Application settings

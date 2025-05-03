@@ -10,8 +10,7 @@ class ProductMatcherService:
         """Calculate similarity ratio between two strings."""
         return SequenceMatcher(None, text1.lower(), text2.lower()).ratio()
     
-    def match_products(self, source_product: Product, scraped_products: List[ScrapedProduct],
-                      min_similarity: float = 0.6) -> List[ScrapedProduct]:
+    def match_products(self, source_product: Product, scraped_products: List[ScrapedProduct]) -> List[ScrapedProduct]:
         """
         Match scraped products against source product using various criteria.
         
@@ -60,5 +59,6 @@ class ProductMatcherService:
                 (weights['brand'] if brand_match else 0)
             )
         
-        # Sort by similarity score in descending order
-        return sorted(scraped_products, key=lambda x: x.similarity_score, reverse=True)
+        # Filter by min_similarity_score and sort by similarity score in descending order
+        matched_products = [p for p in scraped_products if p.similarity_score >= p.min_similarity_score]
+        return sorted(matched_products, key=lambda x: x.similarity_score, reverse=True)
